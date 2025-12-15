@@ -1,6 +1,8 @@
 package com.example.mindcue;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +21,18 @@ public class MainActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+
+        Button swapBtn = findViewById(R.id.swap_text_btn);
+        TextView textView = findViewById(R.id.text_box);
+
+        swapBtn.setOnClickListener(v -> {
+            if(textView.getText().equals("Hello World")) {
+                textView.setText("Tata Bye Bye");
+            } else {
+                textView.setText("Hello World");
+            }
         });
     }
 }
